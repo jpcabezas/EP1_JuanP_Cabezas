@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EP1_JuanP_Cabezas.registro">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="blue"/>
+                <Setter Property="TextColor" Value="red"/>
+                <Setter Property="CornerRadius" Value="100"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblUsuario" FontSize="14" TextColor="red" HorizontalTextAlignment="End"/>
+            <Label Text="REGISTRO" FontSize="26" HorizontalTextAlignment="Center"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="Apellido" FontSize="20" Grid.Row="0" Grid.Column="1" Style="{StaticResource miEstilo}"/>
+                <Label Text="Edad" FontSize="20" Grid.Row="0" Grid.Column="2" Style="{StaticResource miEstilo}"/>
+
+                <Entry x:Name="txtNombre" Placeholder="Nombre" Grid.Row="1" Grid.Column="0"/>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="txtEdad" Placeholder="Edad" Grid.Row="1" Grid.Column="2"/>
+
+                <Label/>
+                <Label/>
+
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <Label Text="FECHA" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="PAIS" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="CUIDAD" FontSize="20" Grid.Row="2" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="MONTO INICIAL" FontSize="20" Grid.Row="3" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="PAGO MENSUAL" FontSize="20" Grid.Row="4" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <DatePicker x:Name="dpFechas" Date="06/23/2023" Format="MM/dd/yyyy" Grid.Row="0" Grid.Column="1"/>
+                <Picker x:Name="dpPais" Title="Paises" SelectedIndexChanged="dpPais_SelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+                <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Perú</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Chile</x:String>
+                    </Picker.Items>
+                    </Picker>
+                <Picker x:Name="dpCiudad" Title="ciudades" SelectedIndexChanged="dpCiudad_SelectedIndexChanged" Grid.Row="2" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Quito</x:String>
+                        <x:String>Santiago</x:String>
+                        <x:String>Cali</x:String>
+                        <x:String>Aguas Calientes</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry Keyboard="Numeric" x:Name="txtMonto" Placeholder="Monto inicial" Grid.Row="3" Grid.Column="1"/>
+                <Entry x:Name="txtPago" Placeholder="Pago mensual" Grid.Row="4" Grid.Column="1"/>
+
+                <Button x:Name="btnResumen" Text="RESUMEN" Clicked="btnResumen_Clicked"  Grid.Row="5" Grid.Column="0"  Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="btnPago" Text="PAGO MENSUAL" Clicked="btnPago_Clicked" Grid.Row="5" Grid.Column="1" Style="{StaticResource buttonStyle}"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

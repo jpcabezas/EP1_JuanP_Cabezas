@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EP1_JuanP_Cabezas.Login" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout >
+
+            <Label Text="Examen: Momento 1" HorizontalTextAlignment="Center" Style="{StaticResource miEstilo}"/>
+            <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png" HeightRequest="300"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    
+
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Usuario" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Label Text="Contraseña" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource miEstilo}"/>
+                <Button x:Name="btnIniciar" Text="Iniciar sesion" Clicked="btnIniciar_Clicked" Grid.Row="2" Grid.Column="0"/>
+
+                <Entry x:Name="txtUsuario" Placeholder="Ingrese el usuario" Grid.Row="0" Grid.Column="1"/>
+                <Entry x:Name="txtContraseña" Placeholder="Ingrese la contraseña" Grid.Row="1" Grid.Column="1" IsPassword="True"/>
+                <Button x:Name="btnCancelar" Text="cancelar" Clicked="btnCancelar_Clicked" Grid.Row="2" Grid.Column="1"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
